@@ -1,0 +1,40 @@
+---
+const today = new Date();
+import Logo from "./Logo.astro";
+---
+
+<footer class="footer bg-dark text-white gap-0 block">
+  <div class="footer-top w-full py-20">
+    <div class="container">
+      <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-10">
+        <div>
+          <Logo mode="dark" />
+        </div>
+        <div class="grid grid-cols-2 gap-10">
+          <nav class="grid gap-3">
+            <h3 class="text-xl font-semibold">Compañia</h3>
+            <a href="#" class="hover:underline hover:text-main">Quienes Somos</a>
+            <a href="/service" class="hover:underline hover:text-main"
+              >Servicios</a
+            >
+          </nav>
+          <!-- <nav class="grid gap-3">
+            <h3 class="text-xl font-semibold">Know More</h3>
+            <a href="#" class="hover:underline hover:text-main">Support</a>
+            <a href="/policy" class="hover:underline hover:text-main"
+              >Privacy Policy</a
+            >
+            <a href="/terms" class="hover:underline hover:text-main"
+              >Terms & conditions</a
+            >
+          </nav> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-btm w-full">
+    <div class="container text-center border-t border-white py-10">
+      &copy; {today.getFullYear()} Salvatierra Electricistas. CUU.
+    </div>
+  </div>
+</footer>

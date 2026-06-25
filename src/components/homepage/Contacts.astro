@@ -1,0 +1,106 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<section class="section section-contacts">
+  <div class="container">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div>
+        <h3 class="font-semibold text-xl lg:text-[40px]">Contactanos</h3>
+        <div class="mt-10 grid gap-6">
+          <div
+            class="grid grid-cols-[54px_1fr] gap-4 items-center dark:bg-dark dark:border-dark bg-gray-50 border border-gray-200 rounded-lg p-4"
+          >
+            <div
+              class="bg-main text-white flex items-center justify-center rounded-full w-13.5 h-13.5"
+            >
+              <Icon name="lucide:phone-call" size={24} />
+            </div>
+            <div>
+              <p class="font-semibold text-lg mb-0">Llamanos</p>
+              <a href="tel:+(08)255201888">+(614) 466 7011</a>
+            </div>
+          </div>
+
+          <div
+            class="grid grid-cols-[54px_1fr] gap-4 items-center dark:bg-dark dark:border-dark bg-gray-50 border border-gray-200 rounded-lg p-4"
+          >
+            <div
+              class="bg-main text-white flex items-center justify-center rounded-full w-13.5 h-13.5"
+            >
+              <Icon name="lucide:mail" size={24} />
+            </div>
+            <div>
+              <p class="font-semibold text-lg mb-0">Mandanos Email</p>
+              <a href="mailto:Hello@procleaning.com">salvatierraelectricistas@gmail.com</a>
+            </div>
+          </div>
+
+          <div
+            class="grid grid-cols-[54px_1fr] gap-4 items-center dark:bg-dark dark:border-dark bg-gray-50 border border-gray-200 rounded-lg p-4"
+          >
+            <div
+              class="bg-main text-white flex items-center justify-center rounded-full w-13.5 h-13.5"
+            >
+              <Icon name="lucide:map-pin" size={24} />
+            </div>
+            <div>
+              <p class="font-semibold text-lg mb-0">Direccion</p>
+              <a href="#"
+                ><address class="not-italic">
+                  Complejo Industrial Chihuahua. Av. de las Industrias. 31136 Chihuahua, Chih.
+                </address></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="text-sm mb-0">Informacion</p>
+        <h3 class="font-semibold text-xl lg:text-[40px] mb-3">Keep In Touch</h3>
+        <p class="">
+          Priorizamos responder a sus consultas con prontitud para garantizar que reciba la asistencia que necesita de manera oportuna.
+        </p>
+
+        <form action="/" method="POST" class="mt-8 grid gap-3">
+          <fieldset class="fieldset">
+            <input
+              type="text"
+              placeholder="Nombre"
+              class="input w-full validator"
+              id="contact-name"
+              name="contact_name"
+              required
+            />
+            <p class="validator-hint hidden">Requerido</p>
+          </fieldset>
+
+          <fieldset class="fieldset">
+            <input
+              type="text"
+              placeholder="Email"
+              class="input w-full validator"
+              id="contact-email"
+              name="contact_email"
+              required
+            />
+            <p class="validator-hint hidden">Requerido</p>
+          </fieldset>
+          <fieldset class="fieldset">
+            <textarea
+              class="textarea w-full validator"
+              placeholder="Mensaje"
+              id="contact-msg"
+              name="contact_msg"
+              required></textarea>
+            <p class="validator-hint hidden">Required</p>
+          </fieldset>
+          <button
+            class="btn bg-main border-main text-white rounded-lg hover:bg-green-600 shadow-none lg:mr-auto"
+            type="submit">Enviar Mensaje</button
+          >
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

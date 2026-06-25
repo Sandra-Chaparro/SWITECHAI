@@ -1,0 +1,24 @@
+---
+import Image from "astro/components/Image.astro";
+const { mode = "light" } = Astro.props;
+---
+
+<a href="/" class="logo">
+  <Image
+    src={mode == "light" ? `/img/logoH.png` : `/img/logoH.png`}
+    alt="logo"
+    width="204"
+    height="50"
+    fetchpriority="high"
+    loading="eager"
+    class="w-auto h-auto dark:hidden"
+  />
+  <Image
+    src="/img/logoH.png"
+    alt="logo"
+    width="90"
+    height="30"
+    loading="eager"
+    class="hidden dark:block"
+  />
+</a>

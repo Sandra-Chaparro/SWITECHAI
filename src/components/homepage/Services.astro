@@ -1,0 +1,35 @@
+---
+import ServiceCard from "../../components/card/ServiceCard.astro";
+import { getCollection } from "astro:content";
+
+const services = (await getCollection("service")).slice(0, 3);
+---
+
+<section class="section section-services">
+  <div class="container">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-4 border-b border-b-main pb-10"
+    >
+      <h2 class="capitalize">Siempre brindando el mejor servicio.</h2>
+      <div>
+        <div class="flex flex-wrap justify-between items-center gap-3">
+          <p class="font-semibold mb-3 text-xl">Servicios</p>
+          <p>
+            <a href="/service" class="text-main underline hover:no-underline"
+              >Ver todos los servicios</a
+            >
+          </p>
+        </div>
+        <p class="mb-3">
+          Si el servicio que busca no aparece en la lista, comuníquese con nosotros. Estaremos encantados de ayudarle.
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mt-10 relative"
+    >
+      {services.map((service) => <ServiceCard {...service} />)}
+    </div>
+  </div>
+</section>
