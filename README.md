@@ -33,8 +33,6 @@ Pages:
 - contacts
 - service
 - service detail
-- blog
-- blog detail
 - 404 / 500
 
 ## PWA support

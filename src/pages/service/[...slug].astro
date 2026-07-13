@@ -1,6 +1,6 @@
 ---
 import { type CollectionEntry, getCollection, render } from "astro:content";
-import BlogPost from "../../layouts/BlogPost.astro";
+import Main from "../../layouts/Main.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("service");
@@ -17,12 +17,28 @@ const post = Astro.props;
 const { Content } = await render(post);
 ---
 
-<BlogPost
-  {...post.data}
-  breadcrumbParent="Service"
+<Main
   title={post.data.title}
   description={post.data.description}
   image={post.data.thumbnail}
 >
-  <Content />
-</BlogPost>
+  <section class="section">
+    <div class="container">
+      <div class="breadcrumbs text-sm mb-6">
+        <ul class="flex! flex-wrap">
+          <li><a href="/">Home</a></li>
+          <li><a href="/service">Service</a></li>
+          <li>{post.data.title}</li>
+        </ul>
+      </div>
+
+      <h1 class="text-3xl sm:text-4xl font-semibold mb-6">
+        {post.data.title}
+      </h1>
+
+      <article class="max-w-3xl text-sm sm:text-base leading-relaxed">
+        <Content />
+      </article>
+    </div>
+  </section>
+</Main>

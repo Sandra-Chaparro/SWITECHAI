@@ -18,10 +18,6 @@ export const NAV_MENU = [
         url: "/service",
         title: "Servicios"
     },
-    {
-        url: "/blog",
-        title: "Blog"
-    },
      {
         url: "/contact",
         title: "Contacto"
