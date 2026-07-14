@@ -1,7 +1,7 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
-export const SITE_TITLE = 'ProCleaning';
+export const SITE_TITLE = 'Salvatierra Electricistas';
 export const SITE_DESCRIPTION = 'Servicios Electricos Residenciales e Industriales en Chihuahua, Mexico.';
 
 
