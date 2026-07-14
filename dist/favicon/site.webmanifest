@@ -1,0 +1,58 @@
+{
+  "name": "Salvatierra Electricistas",
+  "short_name": "Salvatierra Electricistas",
+  "start_url": "/",
+  "description": "Electricista con mas de 25 años de experiencia en instalaciones residenciales, comerciales e industriales. Chihuahua, Chihuahua, Mexico.",
+  "display_override": ["window-control-overlay", "minimal-ui"],
+  "orientation": "portrait",
+  "theme_color": "#ffffff",
+  "background_color": "#36B864",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/SEO/screen1.png",
+      "type": "image/jpg",
+      "sizes": "720x1280",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/SEO/screen1.png",
+      "type": "image/jpg",
+      "sizes": "720x1280",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/SEO/screen1.png",
+      "type": "image/jpg",
+      "sizes": "720x1280",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/SEO/screen1.png",
+      "sizes": "540x720",
+      "type": "image/jpeg",
+      "form_factor": "narrow"
+    }
+  ]
+  
+}
