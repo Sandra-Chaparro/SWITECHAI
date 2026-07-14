@@ -30,25 +30,25 @@
   ],
   "screenshots": [
     {
-      "src": "/SEO/screen1.jpg",
+      "src": "/SEO/screen1.png",
       "type": "image/jpg",
       "sizes": "720x1280",
       "form_factor": "wide"
     },
     {
-      "src": "/SEO/screen2.jpg",
+      "src": "/SEO/screen1.png",
       "type": "image/jpg",
       "sizes": "720x1280",
       "form_factor": "wide"
     },
     {
-      "src": "/SEO/screen3.jpg",
+      "src": "/SEO/screen1.png",
       "type": "image/jpg",
       "sizes": "720x1280",
       "form_factor": "wide"
     },
     {
-      "src": "/SEO/screen4.jpg",
+      "src": "/SEO/screen1.png",
       "sizes": "540x720",
       "type": "image/jpeg",
       "form_factor": "narrow"
