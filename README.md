@@ -1,13 +1,3 @@
-> ⭐️ Love this theme? Star it to support our work!
-
-# ProCleaning: Cleaning services website landing page
-
-A modern, responsive landing page template for cleaning service businesses. Built with Astro and Tailwind CSS, ProCleaning helps cleaning companies showcase their services, team, testimonials, and contact information with a fast, professional, and conversion-focused design.
-
-> ⚡ Built with Astro 6, Tailwind CSS 4 & DaisyUI, and Markdown — optimized for performance, SEO, and simplicity.
-
-![Template Preview](https://github.com/anastasiiaxfr/ProCleaning/blob/main/public/theme/og_1200x630.jpg)
-
 ## Demo
 
 - ✨ [Live Demo](https://pro-cleaning-eta.vercel.app/)
@@ -36,18 +26,6 @@ Pages:
 - 404 / 500
 
 ## PWA support
-
-![pwa](https://github.com/anastasiiaxfr/ProCleaning/blob/main/public/theme/3.jpg)
-
-## Google pages speed
-
-![mobile](https://github.com/anastasiiaxfr/ProCleaning/blob/main/public/theme/1.jpg)
-![desktop](https://github.com/anastasiiaxfr/ProCleaning/blob/main/public/theme/2.jpg)
-
-## Open Graph Card
-
-![Facebook](https://github.com/anastasiiaxfr/ProCleaning/blob/main/public/theme/5.jpg)
-![Telegram](https://github.com/anastasiiaxfr/ProCleaning/blob/main/public/theme/4.jpg)
 
 Main color changed to Luminance color:
 [Luminance color](https://app.contrast-finder.org/result.html?foreground=%23FFF&background=%2336B864&ratio=4.5&isBackgroundTested=true&algo=Rgb&lang=uk)
@@ -83,12 +61,5 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
 
-## 🛠 Credits
-
-Made with ❤️ by [anastasiiaxfr](https://github.com/anastasiiaxfr/ProCleaning)
-
-ProCleaning is inspired by the free [ProCleaning Theme](https://www.figma.com/community/file/1382254995439883455/cleaning-services-website-landing-page)
