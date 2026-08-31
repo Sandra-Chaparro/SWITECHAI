@@ -10,11 +10,11 @@ const { data, id } = Astro.props;
     <Image
       src={data.thumbnail}
       alt={data.title}
-      width="400"
-      height="200"
+      width="500"
+      height="250"
       format="webp"
-      quality={45}
-      class="w-full h-auto aspect-2/1 rounded-xl object-cover mb-4"
+      quality={75}
+      class="w-full max-w-sm mx-auto h-auto aspect-2/1 rounded-xl object-cover mb-4"
     />
 
     <h3 class="font-semibold text-xl sm:text-2xl my-4">{data.title}</h3>
@@ -23,7 +23,7 @@ const { data, id } = Astro.props;
     <button
       class="btn btn-outline hover:bg-main hover:text-white hover:border-main rounded-lg"
     >
-      Contactanos
+      Contact Us
       <Icon name="lucide:arrow-up-right" size={16} />
     </button>
   </a>

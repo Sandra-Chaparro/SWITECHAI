@@ -1,8 +1,6 @@
 
-import __ASTRO_IMAGE_IMPORT_Zxg0qD from "../../assets/services/cableado-electrico-chihuahua-mexico.png?astroContentImageFlag=&importer=src%2Fcontent%2Fservice%2Fs2.md";
-import __ASTRO_IMAGE_IMPORT_uVRcR from "../../assets/services/camaras-seguridad-chiahuahua-electrico.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fservice%2Fs4.md";
-import __ASTRO_IMAGE_IMPORT_1iPuJg from "../../assets/services/luces-exterior-chihuahua-mexico.avif?astroContentImageFlag=&importer=src%2Fcontent%2Fservice%2Fs3.md";
-import __ASTRO_IMAGE_IMPORT_XkdS9 from "../../assets/services/minisplit-electricista-chihuahua.png?astroContentImageFlag=&importer=src%2Fcontent%2Fservice%2Fs5.md";
-import __ASTRO_IMAGE_IMPORT_Ykh1h from "../../assets/services/toma-corriente-electricista-chihuahua.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fservice%2Fs1.md";
-export default new Map([["../../assets/services/cableado-electrico-chihuahua-mexico.png?astroContentImageFlag=&importer=src%2Fcontent%2Fservice%2Fs2.md", __ASTRO_IMAGE_IMPORT_Zxg0qD], ["../../assets/services/camaras-seguridad-chiahuahua-electrico.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fservice%2Fs4.md", __ASTRO_IMAGE_IMPORT_uVRcR], ["../../assets/services/luces-exterior-chihuahua-mexico.avif?astroContentImageFlag=&importer=src%2Fcontent%2Fservice%2Fs3.md", __ASTRO_IMAGE_IMPORT_1iPuJg], ["../../assets/services/minisplit-electricista-chihuahua.png?astroContentImageFlag=&importer=src%2Fcontent%2Fservice%2Fs5.md", __ASTRO_IMAGE_IMPORT_XkdS9], ["../../assets/services/toma-corriente-electricista-chihuahua.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fservice%2Fs1.md", __ASTRO_IMAGE_IMPORT_Ykh1h]]);
+import __ASTRO_IMAGE_IMPORT_13H93O from "../../assets/services/SEOOptimization.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fservice%2Fs2.md";
+import __ASTRO_IMAGE_IMPORT_ZaNoNk from "../../assets/services/WebsiteGrowth.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fservice%2Fs3.md";
+import __ASTRO_IMAGE_IMPORT_kvJCM from "../../assets/services/websiteCreation.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fservice%2Fs1.md";
+export default new Map([["../../assets/services/SEOOptimization.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fservice%2Fs2.md", __ASTRO_IMAGE_IMPORT_13H93O], ["../../assets/services/WebsiteGrowth.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fservice%2Fs3.md", __ASTRO_IMAGE_IMPORT_ZaNoNk], ["../../assets/services/websiteCreation.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fservice%2Fs1.md", __ASTRO_IMAGE_IMPORT_kvJCM]]);
 		
