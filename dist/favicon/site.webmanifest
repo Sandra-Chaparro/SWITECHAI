@@ -1,8 +1,8 @@
 {
-  "name": "Salvatierra Electricistas",
-  "short_name": "Salvatierra Electricistas",
+  "name": "Salvatierra Digital",
+  "short_name": "Salvatierra Digital",
   "start_url": "/",
-  "description": "Electricista con mas de 25 años de experiencia en instalaciones residenciales, comerciales e industriales. Chihuahua, Chihuahua, Mexico.",
+  "description": "Creation of professional websites and SEO strategies that help businesses build their online presence and grow.",
   "display_override": ["window-control-overlay", "minimal-ui"],
   "orientation": "portrait",
   "theme_color": "#ffffff",

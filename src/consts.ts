@@ -1,8 +1,8 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
-export const SITE_TITLE = 'Salvatierra Electricistas';
-export const SITE_DESCRIPTION = 'Servicios Electricos Residenciales e Industriales en Chihuahua, Mexico.';
+export const SITE_TITLE = 'Salvatierra Digital';
+export const SITE_DESCRIPTION = 'From building your website to implementing SEO strategies, we help your business grow online.';
 
 
 export const NAV_MENU = [
@@ -12,10 +12,10 @@ export const NAV_MENU = [
     },
     {
         url: "/service",
-        title: "Servicios"
+        title: "Services"
     },
      {
         url: "/contact",
-        title: "Contacto"
+        title: "Contact"
     }
 ];
