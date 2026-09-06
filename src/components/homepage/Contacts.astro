@@ -62,7 +62,8 @@ import { Icon } from "astro-icon/components";
           Let’s talk about how we can help bring your ideas to life.
         </p>
 
-        <form action="/" method="POST" class="mt-8 grid gap-3">
+        <!--<form action="/" method="POST" class="mt-8 grid gap-3">-->
+        <form id="contact-form" class="mt-8 grid gap-3">
           <fieldset class="fieldset">
             <input
               type="text"
@@ -95,12 +96,30 @@ import { Icon } from "astro-icon/components";
               required></textarea>
             <p class="validator-hint hidden">Required</p>
           </fieldset>
+          <p id="contact-form-error" class="text-red-500 text-sm hidden"></p>
           <button
             class="btn bg-main border-main text-white rounded-lg hover:bg-green-600 shadow-none lg:mr-auto"
-            type="submit">Send Message</button
-          >
+            type="submit">Send Message
+          </button>
         </form>
       </div>
     </div>
   </div>
 </section>
+<script>
+  const CONTACT_EMAIL = "salvatierradigital@gmail.com";
+
+  const form = document.getElementById("contact-form");
+  const errorEl = document.getElementById("contact-form-error");
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    if (errorEl) {
+      errorEl.textContent =
+        `Something went wrong. Please email us directly at ${CONTACT_EMAIL} and we'll be happy to assist you.`;
+
+      errorEl.classList.remove("hidden");
+    }
+  });
+</script>
