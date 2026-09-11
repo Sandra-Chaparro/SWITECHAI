@@ -14,8 +14,12 @@ export const NAV_MENU = [
         url: "/service",
         title: "Services"
     },
+    {
+        url: "/pricing",
+        title: "Pricing"
+    },
      {
-        url: "/contact",
-        title: "Contact"
+        url: "/faq",
+        title: "FAQ"
     }
 ];

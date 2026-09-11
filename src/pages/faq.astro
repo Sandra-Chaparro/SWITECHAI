@@ -1,0 +1,95 @@
+---
+import Layout from "../layouts/Main.astro";
+import { Icon } from "astro-icon/components";
+
+const faqs = [
+  {
+    question: "What's included in the one-time website packages?",
+    answer:
+      "Each package (Basic, Advanced, Premium, and Custom) includes a different set of pages and features — see the Website Packages section on our Pricing page for the full breakdown of what's included in each tier.",
+  },
+  {
+    question: "Are there any recurring fees with a one-time package?",
+    answer:
+      "No. The one-time price covers the full build, including hosting, domain connection, and SSL at launch. If you'd like us to keep hosting and maintaining your site afterward, that's optional and available through our monthly care plans.",
+  },
+  {
+    question: "Do you offer ongoing maintenance after launch?",
+    answer:
+      "Yes. Our monthly plans — Hosting, Website Care, Website Growth, and Custom Management — keep your site online, secure, and up to date after it launches.",
+  },
+  {
+    question: "Can I make changes to my website after it launches?",
+    answer:
+      "Yes. Ongoing updates are included in our Website Care and Website Growth plans, and larger changes can be quoted individually.",
+  },
+  {
+    question: "Do you support websites you didn't build?",
+    answer:
+      "Not currently — our monthly care plans are only available for websites we've built.",
+  },
+  {
+    question: "What if my project needs something outside the standard packages?",
+    answer:
+      "That's what our Custom Website package is for — ecommerce, booking systems, membership areas, and other specialized functionality are quoted individually based on your needs.",
+  },
+  {
+    question: "Will my website be mobile-friendly and SEO-ready?",
+    answer:
+      "Yes — every package, including Basic, includes responsive mobile design and SEO fundamentals.",
+  },
+  {
+    question: "How long does a project typically take?",
+    answer:
+      "Timelines vary depending on the package and scope of your project — Basic and Advanced sites generally move faster than Premium or Custom builds. We'll give you a clear timeline before work begins.",
+  },
+  {
+    question: "Are revisions included?",
+    answer:
+      "Yes, revisions are included with every package, with more rounds included on our Advanced and Premium tiers.",
+  },
+  {
+    question: "How do I get started?",
+    answer:
+      "Reach out through our Contact page and tell us about your business and goals — we'll help you find the right package for you.",
+  },
+];
+---
+
+<Layout title="FAQ">
+  <section class="bg-dark text-white py-16 lg:py-24">
+    <div class="container max-w-3xl">
+      <div class="breadcrumbs text-sm mb-6">
+        <ul class="flex! flex-wrap">
+          <li><a href="/" class="text-white/60 hover:text-white">Home</a></li>
+          <li class="text-white/60">FAQ</li>
+        </ul>
+      </div>
+
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <h1 class="uppercase">Frequently Asked Questions</h1>
+        <p class="text-white/70">
+          Answers to common questions about our packages, pricing, and
+          ongoing support.
+        </p>
+      </div>
+
+      <div class="bg-white/5 border border-white/10 rounded-2xl divide-y divide-white/10 overflow-hidden">
+        {
+          faqs.map((faq) => (
+            <details class="group [&_summary::-webkit-details-marker]:hidden">
+              <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-lg p-6 hover:bg-white/5 transition-colors">
+                {faq.question}
+                <Icon
+                  name="lucide:chevron-down"
+                  class="w-5 h-5 text-white/50 shrink-0 transition-transform group-open:rotate-180"
+                />
+              </summary>
+              <p class="text-white/70 px-6 pb-6 -mt-2">{faq.answer}</p>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Layout>
