@@ -4,6 +4,7 @@
 @theme {
     --color-main: #35864C; /* #36B864 */
     --color-dark: #111D15;
+    --color-light: #FFFFFF;
 }
 
 .container {
