@@ -7,29 +7,29 @@ const services = (await getCollection("service")).slice(0, 3);
 
 <section class="section section-services">
   <div class="container">
-    <h2 class="capitalize">Your business deserve a better online presence.</h2>
+    <h2 class="capitalize">Everything You Need to Build, Launch, and Grow Online.</h2>
     <div
-      class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-4 border-b border-b-main pb-10"
+      class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-4 border-b border-b-main/30 pb-10"
     >
       <div>
         <p class="mb-3">
-          Digital Solutions Built for Your Business.
+          We build websites from the ground up and provide ongoing support for the sites we create, including SEO and technical updates.
         </p>
       </div>
     </div>
 
-    <p class="font-semibold mb-8 text-3xl mt-10 text-center">Services</p>
+    <p class="kicker justify-center mt-10 mb-2">Services</p>
 
     <div
       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 relative"
     >
-      {services.map((service) => <ServiceCard {...service} />)}
+      {services.map((service, i) => <ServiceCard {...service} data-reveal style={`--reveal-delay: ${i * 0.1}s`} />)}
     </div>
 
     <div class="mt-10 flex justify-center">
       <a
         href="/service"
-        class="btn bg-main border-main text-white rounded-lg hover:bg-green-600"
+        class="btn-brand"
         >See all services</a
       >
     </div>

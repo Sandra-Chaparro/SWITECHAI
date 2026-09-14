@@ -151,8 +151,13 @@ const carePlans = [
 ---
 
 <Layout title="Pricing">
-  <section class="bg-dark text-white py-16 lg:py-24">
-    <div class="container">
+  <section class="bg-dark text-white py-16 lg:py-24 relative overflow-hidden">
+    <div
+      class="absolute -top-24 left-1/2 -translate-x-1/2 w-[32rem] h-[20rem] bg-main/20 blur-3xl rounded-full -z-0 pointer-events-none"
+      aria-hidden="true"
+    >
+    </div>
+    <div class="container relative z-10">
       <div class="breadcrumbs text-sm mb-6">
         <ul class="flex! flex-wrap">
           <li><a href="/" class="text-white/60 hover:text-white">Home</a></li>
@@ -170,18 +175,31 @@ const carePlans = [
         </p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
         {
-          packages.map((pkg) => (
-            <div class="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col">
-              <h3 class="text-xl mb-1">
+          packages.map((pkg, i) => (
+            <div
+              class:list={[
+                "border rounded-2xl p-6 flex flex-col relative transition-all duration-300",
+                pkg.featured
+                  ? "bg-main/10 border-main/50 shadow-glow-main lg:-translate-y-2 lg:scale-105"
+                  : "bg-white/5 border-white/10 shadow-soft hover:-translate-y-1 hover:border-white/20",
+              ]}
+              data-reveal
+              style={`--reveal-delay: ${i * 0.08}s`}
+            >
+              {pkg.featured && (
+                <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-main text-white text-xs font-semibold uppercase tracking-wide px-3 py-1 rounded-full shadow-soft">
+                  Most Popular
+                </span>
+              )}
+              <h3 class="font-display text-xl mb-1">
                 {pkg.name}
-                {pkg.featured && <span class="ml-1">⭐</span>}
               </h3>
               <p class="text-white/60 text-sm mb-6">{pkg.description}</p>
 
               <div class="mb-6">
-                <span class="text-3xl md:text-4xl font-bold">{pkg.price}</span>
+                <span class:list={["text-3xl md:text-4xl font-bold", pkg.featured && "text-main"]}>{pkg.price}</span>
                 {pkg.period && (
                   <div class="text-white/50 text-sm">{pkg.period}</div>
                 )}
@@ -191,8 +209,8 @@ const carePlans = [
                 href="/contact"
                 class={
                   pkg.featured
-                    ? "btn bg-main border-main text-white rounded-lg hover:bg-green-600 mb-6"
-                    : "btn btn-outline border-white/20 text-white rounded-lg hover:bg-white/10 hover:border-white/20 mb-6"
+                    ? "btn-brand mb-6"
+                    : "btn-brand-outline-light mb-6"
                 }
               >
                 {pkg.cta}
@@ -220,18 +238,31 @@ const carePlans = [
           </p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
           {
-            carePlans.map((plan) => (
-              <div class="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col">
-                <h3 class="text-xl mb-1">
+            carePlans.map((plan, i) => (
+              <div
+                class:list={[
+                  "border rounded-2xl p-6 flex flex-col relative transition-all duration-300",
+                  plan.featured
+                    ? "bg-main/10 border-main/50 shadow-glow-main lg:-translate-y-2 lg:scale-105"
+                    : "bg-white/5 border-white/10 shadow-soft hover:-translate-y-1 hover:border-white/20",
+                ]}
+                data-reveal
+                style={`--reveal-delay: ${i * 0.08}s`}
+              >
+                {plan.featured && (
+                  <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-main text-white text-xs font-semibold uppercase tracking-wide px-3 py-1 rounded-full shadow-soft">
+                    Most Popular
+                  </span>
+                )}
+                <h3 class="font-display text-xl mb-1">
                   {plan.name}
-                  {plan.featured && <span class="ml-1">⭐</span>}
                 </h3>
                 <p class="text-white/60 text-sm mb-6">{plan.description}</p>
 
                 <div class="mb-6">
-                  <span class="text-3xl md:text-4xl font-bold">
+                  <span class:list={["text-3xl md:text-4xl font-bold", plan.featured && "text-main"]}>
                     {plan.price}
                   </span>
                   <span class="text-white/50 text-sm">{plan.period}</span>
@@ -241,8 +272,8 @@ const carePlans = [
                   href="/contact"
                   class={
                     plan.featured
-                      ? "btn bg-main border-main text-white rounded-lg hover:bg-green-600 mb-6"
-                      : "btn btn-outline border-white/20 text-white rounded-lg hover:bg-white/10 hover:border-white/20 mb-6"
+                      ? "btn-brand mb-6"
+                      : "btn-brand-outline-light mb-6"
                   }
                 >
                   {plan.cta}

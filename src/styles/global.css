@@ -2,9 +2,16 @@
 @plugin "daisyui";
 
 @theme {
-    --color-main: #35864C; /* #36B864 */
+    --color-main: #35864C;
+    --color-main-hover: #2D7241;
+    --color-main-active: #245D35;
+    --color-main-soft: #EBF3ED;
     --color-dark: #111D15;
     --color-light: #FFFFFF;
+
+    --shadow-soft: 0 2px 8px -2px rgb(17 29 21 / 0.06), 0 4px 16px -4px rgb(17 29 21 / 0.08);
+    --shadow-premium: 0 8px 30px -8px rgb(17 29 21 / 0.18), 0 2px 10px -2px rgb(17 29 21 / 0.10);
+    --shadow-glow-main: 0 0 0 1px rgb(53 134 76 / 0.18), 0 10px 30px -8px rgb(53 134 76 / 0.35);
 }
 
 .container {
@@ -19,19 +26,105 @@
     @apply text-lg;
 }
 
+.header.scrolled {
+    @apply shadow-premium;
+}
+
 .menu {
     a {
         @apply hover:text-main text-base;
     }
 }
 
+.kicker {
+    @apply inline-flex items-center gap-2 text-main font-semibold text-sm uppercase tracking-[0.15em] mb-2;
+}
+.kicker::before {
+    content: "";
+    @apply w-1.5 h-1.5 rounded-full bg-main shrink-0;
+}
+
+.font-display {
+    font-family: var(--font-display), Georgia, serif;
+}
+
+/*
+ * These are defined in @layer components (rather than as bare unlayered
+ * classes like the rest of this file) so that ordinary Tailwind utility
+ * classes placed alongside them in markup (e.g. a one-off `dark:text-white`)
+ * still win in the cascade — bare classes sit in Tailwind v4's implicit
+ * top-priority layer and would otherwise beat utilities regardless of order.
+ */
+@layer components {
+    .btn-brand {
+        @apply btn bg-main border-main text-white rounded-xl shadow-soft
+               transition-all duration-200 ease-out
+               hover:bg-main-hover hover:border-main-hover hover:shadow-premium hover:-translate-y-0.5
+               active:translate-y-0 active:bg-main-active active:border-main-active active:shadow-soft
+               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-main-soft focus-visible:ring-offset-2;
+    }
+
+    .btn-brand-outline {
+        @apply btn btn-outline border-2 border-gray-300 text-gray-700 rounded-xl
+               transition-all duration-200 ease-out
+               hover:bg-main hover:text-white hover:border-main hover:-translate-y-0.5 hover:shadow-soft
+               active:translate-y-0
+               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-main-soft focus-visible:ring-offset-2;
+    }
+
+    .btn-brand-outline-light {
+        @apply btn btn-outline border-2 border-white/25 text-white rounded-xl
+               transition-all duration-200 ease-out
+               hover:bg-white/10 hover:border-white/40 hover:-translate-y-0.5
+               active:translate-y-0
+               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:ring-offset-2 focus-visible:ring-offset-dark;
+    }
+
+    .input, .textarea, .select {
+        @apply rounded-xl border-gray-300 transition-colors duration-200
+               focus:border-main focus:outline-none focus:ring-2 focus:ring-main-soft;
+    }
+
+    .btn-invert {
+        @apply btn bg-white border-white text-main rounded-xl shadow-soft
+               transition-all duration-200 ease-out
+               hover:bg-main-soft hover:shadow-premium hover:-translate-y-0.5
+               active:translate-y-0 active:shadow-soft
+               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-main;
+    }
+}
+
+[data-reveal] {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition-delay: var(--reveal-delay, 0s);
+}
+[data-reveal].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+    [data-reveal] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
 @layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
     h1 {
-        @apply font-bold text-3xl sm:text-4xl md:text-5xl lg:text-[52px] mb-3 leading-[1.2];
+        @apply font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-[52px] mb-3 leading-[1.15];
+        font-family: var(--font-display), Georgia, serif;
     }
 
     h2 {
-        @apply font-bold sm:font-semibold mb-3 text-2xl sm:text-3xl md:text-4xl lg:text-[44px];
+        @apply font-semibold mb-3 text-2xl sm:text-3xl md:text-4xl lg:text-[44px] leading-[1.15];
+        font-family: var(--font-display), Georgia, serif;
     }
 
     h3 {
@@ -81,15 +174,21 @@
     ul {
         @apply list-disc;
     }
+
+    a {
+        @apply text-main underline decoration-main/30 underline-offset-2 hover:decoration-main transition-colors;
+    }
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
+    transform: translateY(8px);
   }
 
   to {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 

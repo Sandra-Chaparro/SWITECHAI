@@ -6,7 +6,7 @@ import { Icon } from "astro-icon/components";
 <div class="mt-20 flex items-center gap-4">
   {
     page.url.prev && (
-      <a href={page.url.prev} class="btn btn-outline">
+      <a href={page.url.prev} class="btn-brand-outline">
         <Icon name="lucide:arrow-left" size={18} />
         Previous
       </a>
@@ -19,7 +19,7 @@ import { Icon } from "astro-icon/components";
 
   {
     page.url.next && (
-      <a href={page.url.next} class="btn btn-outline">
+      <a href={page.url.next} class="btn-brand-outline">
         Next <Icon name="lucide:arrow-right" size={18} />
       </a>
     )

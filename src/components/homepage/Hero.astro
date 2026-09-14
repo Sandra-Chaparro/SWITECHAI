@@ -17,23 +17,28 @@ import { Image } from "astro:assets";
     class="absolute inset-0 w-full h-full object-cover object-top -z-10 opacity-40"
   />
   <div class="absolute inset-0 bg-white/80 dark:bg-black/80 md:bg-transparent -z-10"></div>
+  <div
+    class="absolute -top-24 -left-24 w-[28rem] h-[28rem] bg-main/10 blur-3xl rounded-full -z-10 pointer-events-none"
+    aria-hidden="true"
+  >
+  </div>
   <div class="container z-10">
     <div class="sm:max-w-md md:max-w-xl text-center sm:text-left">
-      <p class="text-sm mb-1">BUILD. OPTIMIZE. GROW.</p>
+      <p class="kicker justify-center sm:justify-start">Websites • SEO • Growth</p>
       <h1>DIGITAL SOLUTIONS BUILT FOR YOUR BUSINESS.</h1>
-      <p>
-        From building your website to implementing SEO strategies, we help your business build a stronger online presence and grow.
+      <p class="max-w-md mx-auto sm:mx-0 text-gray-600 dark:text-white/70">
+        We design and build modern websites for your business—using the right strategies to help you get found online, build customer trust, and grow.
       </p>
       <div class="mt-6 grid grid-cols-2 gap-4 max-w-sm mx-auto sm:mx-0">
         <a
           href="/contact"
-          class="btn bg-main border-main text-white rounded-lg hover:bg-green-600"
-          >Contact Us</a
+          class="btn-brand btn-lg"
+          >Start Project</a
         >
         <a
           href="/service"
-          class="btn btn-outline hover:bg-white hover:border-white rounded-lg"
-          >See services</a
+          class="btn-brand-outline btn-lg dark:text-white dark:border-white/30 dark:hover:border-main"
+          >View Services</a
         >
       </div>
     </div>

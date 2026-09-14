@@ -1,0 +1,54 @@
+---
+import { Icon } from "astro-icon/components";
+
+const points = [
+  {
+    icon: "lucide:palette",
+    title: "Custom Design",
+    description: "Every site is designed around your brand, not a generic template.",
+  },
+  {
+    icon: "lucide:code",
+    title: "Modern Development",
+    description: "Built with modern, reliable tools for a fast, professional site.",
+  },
+  {
+    icon: "lucide:smartphone",
+    title: "Mobile Responsive",
+    description: "Looks and works great on every screen, from phones to desktops.",
+  },
+  {
+    icon: "lucide:search",
+    title: "SEO-Ready",
+    description: "Built to help customers find your business through search.",
+  },
+  {
+    icon: "lucide:heart-handshake",
+    title: "Personalized Service",
+    description: "A dedicated partner who knows your business and your goals.",
+  },
+];
+---
+
+<section class="section section-why-us">
+  <div class="container">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <p class="kicker justify-center">Why Work With Us</p>
+      <h2>What You Get When You Work With Us.</h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
+      {
+        points.map((point, i) => (
+          <div class="text-center" data-reveal style={`--reveal-delay: ${i * 0.08}s`}>
+            <div class="mx-auto mb-4 bg-main text-white flex items-center justify-center rounded-full ring-4 ring-main-soft w-14 h-14">
+              <Icon name={point.icon} size={24} />
+            </div>
+            <p class="font-semibold text-lg mb-1">{point.title}</p>
+            <p class="text-sm text-gray-600 dark:text-white/70">{point.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

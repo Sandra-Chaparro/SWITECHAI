@@ -29,9 +29,9 @@ const { page } = Astro.props;
         class="grid grid-cols-1 sm:grid-cols-2 gap-10 items-stretch"
       >
         {
-          page.data.map((post) => (
+          page.data.map((post, i) => (
             <li>
-              <ServiceCard {...post} />
+              <ServiceCard {...post} data-reveal style={`--reveal-delay: ${(i % 2) * 0.1}s`} />
             </li>
           ))
         }

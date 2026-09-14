@@ -36,5 +36,14 @@ export default defineConfig({
 				],
 			},
 		},
+		{
+			provider: fontProviders.google(),
+			name: 'Fraunces',
+			cssVariable: '--font-display',
+			weights: [500, 600, 700],
+			styles: ['normal'],
+			subsets: ['latin'],
+			fallbacks: ['Georgia', 'serif'],
+		},
 	],
 });

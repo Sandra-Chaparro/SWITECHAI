@@ -57,8 +57,13 @@ const faqs = [
 ---
 
 <Layout title="FAQ">
-  <section class="bg-dark text-white py-16 lg:py-24">
-    <div class="container max-w-3xl">
+  <section class="bg-dark text-white py-16 lg:py-24 relative overflow-hidden">
+    <div
+      class="absolute -top-24 left-1/2 -translate-x-1/2 w-[32rem] h-[20rem] bg-main/20 blur-3xl rounded-full -z-0 pointer-events-none"
+      aria-hidden="true"
+    >
+    </div>
+    <div class="container max-w-3xl relative z-10">
       <div class="breadcrumbs text-sm mb-6">
         <ul class="flex! flex-wrap">
           <li><a href="/" class="text-white/60 hover:text-white">Home</a></li>
@@ -74,15 +79,19 @@ const faqs = [
         </p>
       </div>
 
-      <div class="bg-white/5 border border-white/10 rounded-2xl divide-y divide-white/10 overflow-hidden">
+      <div class="bg-white/5 border border-white/10 rounded-2xl divide-y divide-white/10 overflow-hidden shadow-soft">
         {
-          faqs.map((faq) => (
-            <details class="group [&_summary::-webkit-details-marker]:hidden">
-              <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-lg p-6 hover:bg-white/5 transition-colors">
+          faqs.map((faq, i) => (
+            <details
+              class="group [&_summary::-webkit-details-marker]:hidden"
+              data-reveal
+              style={`--reveal-delay: ${i * 0.05}s`}
+            >
+              <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-lg p-6 transition-colors hover:bg-white/5 group-open:bg-main/10 group-open:text-main">
                 {faq.question}
                 <Icon
                   name="lucide:chevron-down"
-                  class="w-5 h-5 text-white/50 shrink-0 transition-transform group-open:rotate-180"
+                  class="w-5 h-5 text-white/50 shrink-0 transition-transform group-open:rotate-180 group-open:text-main"
                 />
               </summary>
               <p class="text-white/70 px-6 pb-6 -mt-2">{faq.answer}</p>

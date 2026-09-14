@@ -4,14 +4,19 @@ import Logo from "../components/Logo.astro";
 ---
 
 <Layout title="Not found">
-  <section class="section flex-1 flex flex-col justify-center items-center">
-    <div class="container text-center grid gap-4">
+  <section class="section flex-1 flex flex-col justify-center items-center relative overflow-hidden">
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[28rem] h-[28rem] bg-main/10 blur-3xl rounded-full -z-10 pointer-events-none"
+      aria-hidden="true"
+    >
+    </div>
+    <div class="container text-center grid gap-4 relative z-10">
       <div class="text-center mx-auto">
         <Logo />
       </div>
-      <h1 class="text-5xl lg:text-[10em] font-bold leading-none">404</h1>
+      <h1 class="font-display text-5xl lg:text-[10em] font-bold leading-none">404</h1>
       <p>Sorry, we couldn't fint that page</p>
-      <a href="/" class="btn btn-neutral mx-auto shadow-none rounded-none"
+      <a href="/" class="btn-brand mx-auto"
         >GO TO HOME</a
       >
     </div>

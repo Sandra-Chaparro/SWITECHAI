@@ -4,12 +4,12 @@ import HeaderLink from "./HeaderLink.astro";
 ---
 
 <div class="hidden lg:block mx-auto">
-  <ul class="menu menu-horizontal gap-x-4">
+  <ul class="menu menu-horizontal gap-x-2">
     <!-- Navbar menu content here -->
     {
       NAV_MENU.map((item) => (
         <li>
-          <HeaderLink href={item.url} class="hover:bg-white">
+          <HeaderLink href={item.url} class="px-3 py-2 rounded-lg transition-colors hover:bg-white/10">
             {item.title}
           </HeaderLink>
         </li>

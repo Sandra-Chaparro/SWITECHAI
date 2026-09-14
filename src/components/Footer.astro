@@ -1,39 +1,60 @@
 ---
 const today = new Date();
 import Logo from "./Logo.astro";
+import { NAV_MENU } from "../consts";
+import { Icon } from "astro-icon/components";
 ---
 
 <footer class="footer bg-dark text-white gap-0 block">
-  <div class="footer-top w-full py-20">
+  <div class="footer-top w-full py-16 lg:py-20">
     <div class="container">
-      <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-10">
-        <div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div class="sm:col-span-2 lg:col-span-1">
           <Logo mode="dark" />
+          <p class="text-white/60 text-sm mt-4 max-w-xs">
+            Digital solutions built for your business — websites, SEO, and
+            ongoing growth support.
+          </p>
         </div>
-        <div class="grid grid-cols-2 gap-10">
-          <nav class="grid gap-3">
-            <h3 class="text-xl font-semibold">Business</h3>
-            <!-- <a href="#" class="hover:underline hover:text-main">Quienes Somos</a> -->
-            <a href="/service" class="hover:underline hover:text-main"
-              >Services</a
-            >
-          </nav>
-          <!-- <nav class="grid gap-3">
-            <h3 class="text-xl font-semibold">Know More</h3>
-            <a href="#" class="hover:underline hover:text-main">Support</a>
-            <a href="/policy" class="hover:underline hover:text-main"
-              >Privacy Policy</a
-            >
-            <a href="/terms" class="hover:underline hover:text-main"
-              >Terms & conditions</a
-            >
-          </nav> -->
+
+        <nav class="grid gap-3 content-start">
+          <h3 class="text-lg font-semibold font-display">Quick Links</h3>
+          {
+            NAV_MENU.map((item) => (
+              <a href={item.url} class="text-white/70 hover:text-main hover:underline transition-colors">
+                {item.title}
+              </a>
+            ))
+          }
+        </nav>
+
+        <div class="grid gap-3 content-start">
+          <h3 class="text-lg font-semibold font-display">Get in Touch</h3>
+          <a href="tel:+526144667011" class="text-white/70 hover:text-main transition-colors"
+            >(972)-439-5165</a
+          >
+          <a href="mailto:salvatierradigital@gmail.com" class="text-white/70 hover:text-main transition-colors"
+            >salvatierradigital@gmail.com</a
+          >
+        </div>
+
+        <div class="grid gap-3 content-start">
+          <h3 class="text-lg font-semibold font-display">Follow Us</h3>
+          <a
+            href="https://www.facebook.com/profile.php?id=61578475133669"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Salvatierra Digital on Facebook"
+            class="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-white/80 hover:text-white hover:bg-main hover:border-main transition-colors"
+          >
+            <Icon name="simple-icons:facebook" size={18} />
+          </a>
         </div>
       </div>
     </div>
   </div>
   <div class="footer-btm w-full">
-    <div class="container text-center border-t border-white py-10">
+    <div class="container text-center border-t border-white/10 py-8 text-white/60 text-sm">
       &copy; {today.getFullYear()} Salvatierra Digital DFW.
     </div>
   </div>

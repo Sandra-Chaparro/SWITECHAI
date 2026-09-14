@@ -2,17 +2,18 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<section class="section section-contacts">
+<section id="contact" class="section section-contacts scroll-mt-24">
   <div class="container">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
       <div>
-        <h3 class="font-semibold text-xl lg:text-[40px]">Contact Us</h3>
+        <p class="kicker">Contact Us</p>
+        <h3 class="font-semibold text-xl lg:text-[40px]">Get in Touch</h3>
         <div class="mt-10 grid gap-6">
           <div
-            class="grid grid-cols-[54px_1fr] gap-4 items-center dark:bg-dark dark:border-dark bg-gray-50 border border-gray-200 rounded-lg p-4"
+            class="grid grid-cols-[54px_1fr] gap-4 items-center dark:bg-dark dark:border-dark bg-gray-50 border border-gray-200 rounded-xl p-4 shadow-soft"
           >
             <div
-              class="bg-main text-white flex items-center justify-center rounded-full w-13.5 h-13.5"
+              class="bg-main text-white flex items-center justify-center rounded-full ring-4 ring-main-soft w-13.5 h-13.5"
             >
               <Icon name="lucide:phone-call" size={24} />
             </div>
@@ -23,10 +24,10 @@ import { Icon } from "astro-icon/components";
           </div>
 
           <div
-            class="grid grid-cols-[54px_1fr] gap-4 items-center dark:bg-dark dark:border-dark bg-gray-50 border border-gray-200 rounded-lg p-4"
+            class="grid grid-cols-[54px_1fr] gap-4 items-center dark:bg-dark dark:border-dark bg-gray-50 border border-gray-200 rounded-xl p-4 shadow-soft"
           >
             <div
-              class="bg-main text-white flex items-center justify-center rounded-full w-13.5 h-13.5"
+              class="bg-main text-white flex items-center justify-center rounded-full ring-4 ring-main-soft w-13.5 h-13.5"
             >
               <Icon name="lucide:mail" size={24} />
             </div>
@@ -59,7 +60,7 @@ import { Icon } from "astro-icon/components";
         <p class="text-sm mb-0">Contact Us</p>
         <h3 class="font-semibold text-xl lg:text-[40px] mb-3">Send us a message!</h3>
         <p class="">
-          Let’s talk about how we can help bring your ideas to life.
+          Tell us about your business and what you're looking to achieve — we'll follow up with next steps.
         </p>
 
         <!--<form action="/" method="POST" class="mt-8 grid gap-3">-->
@@ -98,7 +99,7 @@ import { Icon } from "astro-icon/components";
           </fieldset>
           <p id="contact-form-error" class="text-red-500 text-sm hidden"></p>
           <button
-            class="btn bg-main border-main text-white rounded-lg hover:bg-green-600 shadow-none lg:mr-auto"
+            class="btn-brand lg:mr-auto"
             type="submit">Send Message
           </button>
         </form>
