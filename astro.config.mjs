@@ -8,7 +8,7 @@ import icon from 'astro-icon';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://salvatierra-digital.vercel.app/',
+	site: 'https://www.switechai.com/',
 	vite: {
 		plugins: [tailwindcss()],
 	},

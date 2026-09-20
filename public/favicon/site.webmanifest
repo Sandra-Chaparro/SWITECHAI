@@ -1,12 +1,12 @@
 {
-  "name": "Salvatierra Digital",
-  "short_name": "Salvatierra Digital",
+  "name": "SWITECHAI",
+  "short_name": "SWITECHAI",
   "start_url": "/",
   "description": "Creation of professional websites and SEO strategies that help businesses build their online presence and grow.",
   "display_override": ["window-control-overlay", "minimal-ui"],
   "orientation": "portrait",
   "theme_color": "#ffffff",
-  "background_color": "#36B864",
+  "background_color": "#366FBA",
   "display": "standalone",
   "icons": [
     {

@@ -2,16 +2,16 @@
 @plugin "daisyui";
 
 @theme {
-    --color-main: #35864C;
-    --color-main-hover: #2D7241;
-    --color-main-active: #245D35;
-    --color-main-soft: #EBF3ED;
-    --color-dark: #111D15;
+    --color-main: #004BAD;
+    --color-main-hover: #003F91;
+    --color-main-active: #003272;
+    --color-main-soft: #ECEFF4;
+    --color-dark: #11161D;
     --color-light: #FFFFFF;
 
-    --shadow-soft: 0 2px 8px -2px rgb(17 29 21 / 0.06), 0 4px 16px -4px rgb(17 29 21 / 0.08);
-    --shadow-premium: 0 8px 30px -8px rgb(17 29 21 / 0.18), 0 2px 10px -2px rgb(17 29 21 / 0.10);
-    --shadow-glow-main: 0 0 0 1px rgb(53 134 76 / 0.18), 0 10px 30px -8px rgb(53 134 76 / 0.35);
+    --shadow-soft: 0 2px 8px -2px rgb(17 22 29 / 0.06), 0 4px 16px -4px rgb(17 22 29 / 0.08);
+    --shadow-premium: 0 8px 30px -8px rgb(17 22 29 / 0.18), 0 2px 10px -2px rgb(17 22 29 / 0.10);
+    --shadow-glow-main: 0 0 0 1px rgb(0 75 173 / 0.18), 0 10px 30px -8px rgb(0 75 173 / 0.35);
 }
 
 .container {

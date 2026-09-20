@@ -5,20 +5,20 @@ const { mode = "light" } = Astro.props;
 
 <a href="/" class="logo">
   <Image
-    src={mode == "light" ? `/img/logoH.png` : `/img/logoH.png`}
+    src="/favicon/logo.png"
     alt="logo"
-    width="204"
-    height="50"
+    width="332"
+    height="347"
     fetchpriority="high"
     loading="eager"
-    class="w-20 h-auto lg:w-auto dark:hidden"
+    class="h-10 w-auto lg:h-12 dark:hidden"
   />
   <Image
-    src="/img/logoH.png"
+    src="/favicon/logo.png"
     alt="logo"
-    width="90"
-    height="30"
+    width="332"
+    height="347"
     loading="eager"
-    class="hidden dark:block"
+    class="hidden h-10 w-auto lg:h-12 dark:block"
   />
 </a>
