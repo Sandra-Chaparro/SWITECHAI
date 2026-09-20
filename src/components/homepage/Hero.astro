@@ -1,46 +1,99 @@
 ---
 import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import Swiper from "../Swiper.astro";
+import img1 from "../../assets/services/websiteCreation.jpg";
+import img2 from "../../assets/hero/world.jpg";
+import img3 from "../../assets/hero/RobotImg.jpg";
+import img4 from "../../assets/services/herobg1.jpg";
+
+const slides = [
+  {
+    kicker: "Websites & Digital Presence",
+    heading: "BUILT FROM SCRATCH.",
+    description: "Custom websites built from scratch for businesses and portfolios.",
+    image: img1,
+    href: "/service/s1",
+  },
+  {
+    kicker: "Custom Software & Web Applications",
+    heading: "TOOLS BUILT TO FIT.",
+    description: "Custom web apps and tools built around how your business works.",
+    image: img2,
+    href: "/service/s2",
+  },
+  {
+    kicker: "AI, Automation & Integrations",
+    heading: "AUTOMATE THE BUSY WORK.",
+    description: "AI tools and automation that handle repetitive work for your business.",
+    image: img3,
+    href: "/service/s3",
+  },
+  {
+    kicker: "SEO & Ongoing Support",
+    heading: "GET FOUND. STAY SUPPORTED.",
+    description: "Search visibility and ongoing care to keep your site running well.",
+    image: img4,
+    href: "/service/s4",
+  },
+];
 ---
 
-<section
-  class="section-hero bg-gray-50 py-10 lg:py-20 bg-no-repeat bg-cover relative overflow-hidden z-0"
->
-  <Image
-    src="/img/bg/herobg.jpg"
-    alt=""
-    width={1200}
-    height={600}
-    loading="eager"
-    fetchpriority="high"
-    format="webp"
-    quality={45}
-    class="absolute inset-0 w-full h-full object-cover object-top -z-10 opacity-40"
-  />
-  <div class="absolute inset-0 bg-white/80 dark:bg-black/80 md:bg-transparent -z-10"></div>
-  <div
-    class="absolute -top-24 -left-24 w-[28rem] h-[28rem] bg-main/10 blur-3xl rounded-full -z-10 pointer-events-none"
-    aria-hidden="true"
-  >
-  </div>
-  <div class="container z-10">
-    <div class="sm:max-w-md md:max-w-xl text-center sm:text-left">
-      <p class="kicker justify-center sm:justify-start">Websites • SEO • Growth</p>
-      <h1>DIGITAL SOLUTIONS BUILT FOR YOUR BUSINESS.</h1>
-      <p class="max-w-md mx-auto sm:mx-0 text-gray-600 dark:text-white/70">
-        We design and build modern websites for your business—using the right strategies to help you get found online, build customer trust, and grow.
-      </p>
-      <div class="mt-6 grid grid-cols-2 gap-4 max-w-sm mx-auto sm:mx-0">
-        <a
-          href="/contact"
-          class="btn-brand btn-lg"
-          >Start Project</a
-        >
-        <a
-          href="/service"
-          class="btn-brand-outline btn-lg dark:text-white dark:border-white/30 dark:hover:border-main"
-          >View Services</a
-        >
+<section class="section-hero hero-swiper relative overflow-hidden bg-dark h-[85vh] min-h-[560px] max-h-[820px]">
+  <h1 class="sr-only">SWITECHAI — Websites, Software, AI Automation & SEO for Growing Businesses</h1>
+
+  <Swiper id="heroSwiper" pagination={true}>
+    {slides.map((slide, i) => (
+      <div class="swiper-slide relative h-full">
+        <Image
+          src={slide.image}
+          alt=""
+          width={1600}
+          height={900}
+          loading={i === 0 ? "eager" : "lazy"}
+          fetchpriority={i === 0 ? "high" : "auto"}
+          format="webp"
+          quality={70}
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" aria-hidden="true"></div>
+
+        <div class="container relative z-10 h-full flex items-end pb-20 lg:pb-28">
+          <div class="max-w-xl text-white">
+            <p class="kicker text-white/80">{slide.kicker}</p>
+            <h2 class="font-display font-black text-4xl sm:text-6xl lg:text-7xl leading-[1.05] mb-4">{slide.heading}</h2>
+            <p class="text-white/80 max-w-md mb-6">{slide.description}</p>
+            <div class="flex flex-wrap gap-4">
+              <a href="/contact" class="btn-brand btn-lg">Start Project</a>
+              <a href={slide.href} class="btn-brand-outline-light btn-lg">View Services</a>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    ))}
+  </Swiper>
+
+  <div class="absolute right-4 sm:right-8 bottom-6 z-10 flex items-center gap-2 text-white/70 text-xs uppercase tracking-[0.15em]">
+    Swipe to slide
+    <Icon name="lucide:arrow-right" size={16} />
   </div>
 </section>
+
+<script>
+  import Swiper from "swiper";
+  import { Autoplay, Pagination } from "swiper/modules";
+
+  new Swiper("#heroSwiper", {
+    modules: [Autoplay, Pagination],
+    loop: true,
+    speed: 1000,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      type: "progressbar",
+    },
+  });
+</script>

@@ -2,7 +2,7 @@
 import ServiceCard from "../../components/card/ServiceCard.astro";
 import { getCollection } from "astro:content";
 
-const services = (await getCollection("service")).slice(0, 3);
+const services = await getCollection("service");
 ---
 
 <section class="section section-services">
@@ -13,7 +13,7 @@ const services = (await getCollection("service")).slice(0, 3);
     >
       <div>
         <p class="mb-3">
-          We build websites from the ground up and provide ongoing support for the sites we create, including SEO and technical updates.
+          We build custom websites and software, and add AI and automation to help your business run smoother.
         </p>
       </div>
     </div>
@@ -21,7 +21,7 @@ const services = (await getCollection("service")).slice(0, 3);
     <p class="kicker justify-center mt-10 mb-2">Services</p>
 
     <div
-      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 relative"
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 relative"
     >
       {services.map((service, i) => <ServiceCard {...service} data-reveal style={`--reveal-delay: ${i * 0.1}s`} />)}
     </div>

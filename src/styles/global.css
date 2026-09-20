@@ -202,3 +202,16 @@
         @apply whitespace-pre-wrap;
     }
 }
+
+.hero-swiper .swiper-pagination.swiper-pagination-progressbar {
+    top: auto;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(90%, 800px);
+    height: 3px;
+    background: rgba(255, 255, 255, 0.2);
+}
+.hero-swiper .swiper-pagination.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    background: var(--color-light);
+}

@@ -2,7 +2,7 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const SITE_TITLE = 'SWITECHAI';
-export const SITE_DESCRIPTION = 'From building your website to implementing SEO strategies, we help your business grow online.';
+export const SITE_DESCRIPTION = 'Websites, software, and AI automation built to help your business grow.';
 
 
 export const NAV_MENU = [
