@@ -25,13 +25,5 @@ const services = await getCollection("service");
     >
       {services.map((service, i) => <ServiceCard {...service} data-reveal style={`--reveal-delay: ${i * 0.1}s`} />)}
     </div>
-
-    <div class="mt-10 flex justify-center">
-      <a
-        href="/service"
-        class="btn-brand"
-        >See all services</a
-      >
-    </div>
   </div>
 </section>

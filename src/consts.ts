@@ -11,10 +11,6 @@ export const NAV_MENU = [
         title: "Home"
     },
     {
-        url: "/service",
-        title: "Services"
-    },
-    {
         url: "/pricing",
         title: "Pricing"
     },

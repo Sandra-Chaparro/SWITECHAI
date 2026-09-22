@@ -1,13 +1,13 @@
 ---
-import { type CollectionEntry, getCollection, render } from "astro:content";
+import { type CollectionEntry, getCollection } from "astro:content";
 import { Image } from "astro:assets";
-import Main from "../../layouts/Main.astro";
+import Main from "../layouts/Main.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("service");
 
   return posts.map((post) => ({
-    params: { slug: post.id },
+    params: { slug: post.data.slug },
     props: post,
   }));
 }
@@ -15,7 +15,11 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"service">;
 
 const post = Astro.props;
-const { Content } = await render(post);
+const firstBulletIndex = post.body.search(/^\* \*\*/m);
+const intro = (firstBulletIndex === -1 ? post.body : post.body.slice(0, firstBulletIndex)).trim();
+const items = [...post.body.matchAll(/^\* \*\*(.+?)\*\*\s*\n\s*(.+)$/gm)].map(
+  ([, title, description]) => ({ title, description })
+);
 ---
 
 <Main
@@ -28,7 +32,6 @@ const { Content } = await render(post);
       <div class="breadcrumbs text-sm mb-6">
         <ul class="flex! flex-wrap">
           <li><a href="/">Home</a></li>
-          <li><a href="/service">Service</a></li>
           <li>{post.data.title}</li>
         </ul>
       </div>
@@ -49,9 +52,20 @@ const { Content } = await render(post);
         />
       )}
 
-      <article class="post max-w-3xl text-sm sm:text-base leading-relaxed">
-        <Content />
-      </article>
+      {intro && (
+        <p class="text-white/70 max-w-2xl text-sm sm:text-base leading-relaxed mb-8">
+          {intro}
+        </p>
+      )}
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {items.map((item) => (
+          <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-premium hover:border-main/30">
+            <h3 class="font-display font-semibold text-lg text-gray-900 mb-2">{item.title}</h3>
+            <p class="text-sm text-gray-600">{item.description}</p>
+          </div>
+        ))}
+      </div>
 
       <div class="mt-10 flex justify-center">
         <a

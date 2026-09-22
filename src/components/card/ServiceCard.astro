@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 
-const { data, id, class: className, style } = Astro.props;
+const { data, class: className, style } = Astro.props;
 const reveal = "data-reveal" in Astro.props;
 ---
 
@@ -14,7 +14,7 @@ const reveal = "data-reveal" in Astro.props;
   data-reveal={reveal ? true : undefined}
   style={style}
 >
-  <a href={`/service/${id}`} class="h-full flex flex-col">
+  <a href={`/${data.slug}`} class="h-full flex flex-col">
     <div class="overflow-hidden rounded-xl mb-4">
       <Image
         src={data.thumbnail}
@@ -28,13 +28,12 @@ const reveal = "data-reveal" in Astro.props;
     </div>
 
     <h3 class="font-display font-semibold text-xl sm:text-2xl my-4 text-gray-900">{data.title}</h3>
-    <p class="mb-4 mt-4 text-sm sm:text-base text-gray-600">{data.description}</p>
 
     <button
       class="btn-brand-outline mt-auto"
     >
       See details
-      <Icon name="lucide:arrow-up-right" size={16} class="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+      <Icon name="lucide:arrow-up-right" size={16} />
     </button>
   </a>
 </article>

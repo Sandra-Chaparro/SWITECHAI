@@ -1,13 +1,45 @@
 ---
+import { getCollection } from "astro:content";
 import { NAV_MENU } from "../consts";
 import HeaderLink from "./HeaderLink.astro";
+
+const services = await getCollection("service");
+const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, "");
+const isServicesActive = services.some((s) => `/${s.data.slug}` === pathname);
+const [home, ...rest] = NAV_MENU;
 ---
 
 <div class="hidden lg:block mx-auto">
   <ul class="menu menu-horizontal gap-x-2">
-    <!-- Navbar menu content here -->
+    <li>
+      <HeaderLink href={home.url} class="px-3 py-2 rounded-lg transition-colors hover:bg-white/10">
+        {home.title}
+      </HeaderLink>
+    </li>
+
+    <li class="dropdown dropdown-hover">
+      <div
+        tabindex="0"
+        role="button"
+        class:list={["px-3 py-2 rounded-lg transition-colors hover:bg-white/10 cursor-pointer", { active: isServicesActive }]}
+      >
+        Services
+      </div>
+      <ul tabindex="0" class="dropdown-content menu bg-dark text-white rounded-lg shadow-premium w-auto p-2 z-50 mt-0!">
+        {
+          services.map((service) => (
+            <li>
+              <a href={`/${service.data.slug}`} class="rounded-lg hover:bg-white/10 text-sm! whitespace-nowrap!">
+                {service.data.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </li>
+
     {
-      NAV_MENU.map((item) => (
+      rest.map((item) => (
         <li>
           <HeaderLink href={item.url} class="px-3 py-2 rounded-lg transition-colors hover:bg-white/10">
             {item.title}
@@ -17,3 +49,9 @@ import HeaderLink from "./HeaderLink.astro";
     }
   </ul>
 </div>
+
+<style>
+  .active {
+    color: var(--color-main);
+  }
+</style>

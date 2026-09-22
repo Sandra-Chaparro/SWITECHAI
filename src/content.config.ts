@@ -10,6 +10,7 @@ const service = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
+      slug: z.string(),
       description: z.string(),
       thumbnail: image().optional(),
       updatedDate: z.coerce.date().optional(),

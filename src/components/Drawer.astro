@@ -1,8 +1,12 @@
 ---
+import { getCollection } from "astro:content";
 import { NAV_MENU } from "../consts";
 import HeaderLink from "./HeaderLink.astro";
 import Logo from "./Logo.astro";
 import { Icon } from "astro-icon/components";
+
+const services = await getCollection("service");
+const [home, ...rest] = NAV_MENU;
 ---
 
 <div class="drawer-side z-[60]">
@@ -23,8 +27,33 @@ import { Icon } from "astro-icon/components";
       </label>
     </div>
     <ul class="mt-2 gap-1">
+      <li>
+        <HeaderLink href={home.url} class="py-3 px-2 text-base hover:bg-white/10 rounded-lg">
+          {home.title}
+        </HeaderLink>
+      </li>
+
+      <li>
+        <details>
+          <summary class="py-3 px-2 text-base hover:bg-white/10 rounded-lg cursor-pointer">
+            Services
+          </summary>
+          <ul>
+            {
+              services.map((service) => (
+                <li>
+                  <a href={`/${service.data.slug}`} class="py-2 px-2 text-sm hover:bg-white/10 rounded-lg">
+                    {service.data.title}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </details>
+      </li>
+
       {
-        NAV_MENU.map((item) => (
+        rest.map((item) => (
           <li>
             <HeaderLink href={item.url} class="py-3 px-2 text-base hover:bg-white/10 rounded-lg">
               {item.title}
