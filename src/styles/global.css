@@ -6,6 +6,7 @@
     --color-main-hover: #003F91;
     --color-main-active: #003272;
     --color-main-soft: #ECEFF4;
+    --color-main-light: #7AB3FF;
     --color-dark: #11161D;
     --color-light: #FFFFFF;
 
@@ -32,16 +33,16 @@
 
 .menu {
     a {
-        @apply hover:text-main text-base;
+        @apply hover:text-main-light text-base;
     }
 }
 
 .kicker {
-    @apply inline-flex items-center gap-2 text-main font-semibold text-sm uppercase tracking-[0.15em] mb-2;
+    @apply inline-flex items-center gap-2 text-main-light font-semibold text-sm uppercase tracking-[0.15em] mb-2;
 }
 .kicker::before {
     content: "";
-    @apply w-1.5 h-1.5 rounded-full bg-main shrink-0;
+    @apply w-1.5 h-1.5 rounded-full bg-main-light shrink-0;
 }
 
 .font-display {

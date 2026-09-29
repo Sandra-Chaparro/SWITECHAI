@@ -77,11 +77,11 @@ const faqs = [
               data-reveal
               style={`--reveal-delay: ${i * 0.05}s`}
             >
-              <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-lg p-6 transition-colors hover:bg-white/5 group-open:bg-main/10 group-open:text-main">
+              <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-lg p-6 transition-colors hover:bg-white/5 group-open:bg-main/10 group-open:text-main-light">
                 {faq.question}
                 <Icon
                   name="lucide:chevron-down"
-                  class="w-5 h-5 text-white/50 shrink-0 transition-transform group-open:rotate-180 group-open:text-main"
+                  class="w-5 h-5 text-white/50 shrink-0 transition-transform group-open:rotate-180 group-open:text-main-light"
                 />
               </summary>
               <p class="text-white/70 px-6 pb-6 -mt-2">{faq.answer}</p>
